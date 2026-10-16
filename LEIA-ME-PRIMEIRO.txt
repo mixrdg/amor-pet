@@ -1,0 +1,82 @@
+AMOR PET — GUIA SIMPLES (Windows + celular)
+===========================================
+
+O QUE É
+Um bichinho virtual fofo para duas pessoas. Cada pessoa cria sua conta, uma gera um convite e a outra aceita. Vocês compartilham o mesmo pet, alimentam, brincam, dão carinho, escolhem animal e casinha, mandam mensagens e registram memórias.
+
+IMPORTANTE
+- O projeto precisa de Node.js instalado no computador para rodar o servidor.
+- O pet sincroniza entre aparelhos que acessam o MESMO servidor.
+- No modo local, computador e celular precisam estar na mesma rede Wi-Fi.
+- Para usar de lugares diferentes pela internet, é necessário publicar o projeto em um serviço de hospedagem com Node.js. Não coloque dados pessoais importantes em uma instalação de teste.
+- Os dados são guardados no arquivo data.json dentro desta pasta. Faça cópia de segurança desse arquivo.
+
+PARTE 1 — RODAR NO PC WINDOWS
+1. Extraia o arquivo amor-pet-completo.zip para uma pasta, por exemplo Área de Trabalho\Amor-Pet.
+2. Instale Node.js LTS pelo site https://nodejs.org/ (se já estiver instalado, pule).
+3. Abra a pasta extraída.
+4. Dê dois cliques em INICIAR-AMOR-PET.bat.
+5. Na primeira vez, aguarde a instalação automática dos componentes. Se o Windows Firewall perguntar, permita acesso em rede privada.
+6. O navegador deve abrir em http://localhost:3000. Se não abrir, digite esse endereço no navegador.
+7. Deixe a janela preta do servidor aberta enquanto estiver usando o pet. Para encerrar, feche a janela do servidor.
+
+PARTE 2 — USAR NO CELULAR NA MESMA REDE WI-FI
+1. Ligue o Wi-Fi do celular e conecte à mesma rede Wi-Fi do PC.
+2. No PC, abra o menu Iniciar, digite cmd e abra o Prompt de Comando.
+3. Digite ipconfig e aperte Enter.
+4. Procure o adaptador Wi-Fi e anote o IPv4, geralmente parecido com 192.168.0.15.
+5. No navegador do celular, digite http://IP-DO-PC:3000. Exemplo: http://192.168.0.15:3000 (use o número real do seu PC, não o exemplo).
+6. Se não abrir, verifique se o servidor continua ligado, se ambos estão no mesmo Wi-Fi e se o Firewall do Windows permite Node.js em redes privadas.
+7. Você pode adicionar o endereço à tela inicial do celular pelo menu do navegador (“Adicionar à tela inicial”).
+
+PARTE 3 — CRIAR O PET DO CASAL
+1. No primeiro aparelho, clique em Criar conta e preencha nome, e-mail e senha (mínimo 6 caracteres).
+2. Clique em Criar convite privado. Aparecerá um código de 6 caracteres.
+3. Envie esse código para a outra pessoa.
+4. No segundo aparelho, abra o mesmo endereço do servidor e crie uma conta diferente.
+5. Na tela “Vamos juntar vocês”, digite o código recebido e o nome desejado para o pet; clique em Aceitar convite.
+6. Pronto! As duas contas verão o mesmo pet e as alterações serão atualizadas automaticamente.
+
+COMO BRINCAR
+- Alimentar 🍓: reduz a fome.
+- Brincar 🎾: aumenta felicidade, mas gasta energia.
+- Carinho 🫶: aumenta felicidade.
+- Dormir 🌙: recupera energia.
+- Banho 🫧: aumenta limpeza.
+- Use os menus para escolher animal e casinha. Clique no lápis para mudar o nome.
+- Bilhetinhos: enviem mensagens entre vocês.
+- Memórias: guardem o título e a história de momentos do namoro.
+- As necessidades diminuem gradualmente com o tempo. Entrem para cuidar do pet juntos!
+
+SE ALGO NÃO FUNCIONAR
+- “Node.js não foi encontrado”: instale Node.js LTS e tente novamente.
+- O site não abre: deixe a janela do servidor aberta e teste http://localhost:3000 no PC.
+- Celular não conecta: confirme o IP do PC, o mesmo Wi-Fi e as permissões do Firewall.
+- Código inválido: gere outro convite na conta que ainda não está vinculada e use uma conta diferente para aceitá-lo.
+- Para zerar tudo, pare o servidor e faça uma cópia de segurança antes de apagar data.json. Apagar esse arquivo remove contas e progresso guardados localmente.
+
+ARQUIVOS
+- server.js: servidor e API.
+- public/index.html: tela do jogo.
+- public/style.css: visual adaptável a PC e celular.
+- public/app.js: ações e atualização do jogo.
+- data.json: criado automaticamente ao guardar dados.
+- INICIAR-AMOR-PET.bat: inicialização com dois cliques no Windows.
+
+NOVIDADE: CHAT E PRESENÇA ONLINE
+- Na área "Chat do casal", enviem mensagens curtas um para o outro.
+- O nome de cada pessoa aparece com um indicador online/offline.
+- O jogo avisa na tela quando a outra pessoa fica online enquanto você está com o jogo aberto.
+- Use "Ativar avisos" para solicitar notificações do navegador. A disponibilidade depende do navegador e do contexto seguro (normalmente HTTPS ou localhost).
+- A presença funciona enquanto os aparelhos estiverem conectados ao mesmo servidor. Para jogar de casas diferentes, publique o servidor numa hospedagem online.
+
+
+NOVIDADES NESTA VERSÃO
+- Crédito no rodapé: Criação de Fenix/Rodrigo.
+- Reações visuais do pet para fome, sono, felicidade, tristeza e satisfação.
+- Opções de comida; o pet recusa comida quando está satisfeito.
+- Sono real programado de 6, 7 ou 8 horas.
+- Cinco minijogos: jogo da velha, memória, pedra-papel-tesoura, quatro em linha e quiz do casal.
+- Convites de minijogos aparecem quando a outra pessoa está online.
+
+Observação: as expressões atuais usam emoji e animações CSS, não um modelo 3D articulado. Os minijogos ainda são uma primeira versão; confira o comportamento online com as duas contas após publicar.
